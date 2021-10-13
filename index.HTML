@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>벌써 일주일이 지나가다니?!</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+	<style type="text/css">
+		
+		body {overflow: hidden; margin: 0;}
+		#back1 {width: 115vw; height: 90vw; background: url(A.gif); background-size: 90%; position: absolute; z-index: -1;}
+		
+		#back2 {position: absolute; z-index: 4;  width: 100vw;  top: -50px;
+				font-size: 18em; color: #fafe82; font-weight: 700; font-family: 'Noto Sans KR', sans-serif; opacity: 95%; text-align: center;}
+		
+		
+		.pp {position: absolute; left: 0; top: 0; animation: jump2 0.7s infinite cubic-bezier(.2,.6,.41,.8); }
+		
+		
+		
+		
+		@keyframes jump2{0%{} 100%{transform: rotate(360deg); } }
+	
+	</style>
+
+<body>
+	
+	
+
+	<div id="back1"></div>
+	
+	<div id="back2"></div>
+	
+	<script type="text/javascript">
+		//반복 for(i=0;i<10; i++){ // 실행}
+		//0부터 시작해서 10이 될때까지 하나씩 늘린다. 
+		//i = i + 1; 1++; 하나씩 늘리기, i--;하나씩 빼기, i+=3; 3씩 증가 
+
+		//for(var i=0;i<10; i++ ){ console.log(i);}
+
+		// 구구단 만들기
+		// for(var i=1;i<9; i++ ){
+		// 	var t = document.createElement("div");
+		// 	t.innerHTML = "---------------<br>" + (i+1) + "단"
+		// 	document.body.appendChild(t);
+			
+		// 	for(var j=0; j<9; j++){
+
+		// 		var s = document.createElement("div");
+		// 		s.innerHTML = (i+1) +" * "+ (j+1) + " = " + (i+1)*(j+1);
+		// 		document.body.appendChild(s);
+				
+		// 		}
+		// 	}
+
+		
+		
+		var im = ["1", "2", "3"]; 
+
+		for(var i=0; i<55; i++){
+			var c = document.createElement("img");
+			c.src = im[randomBH(0,2)] + ".png";
+			c.className = "pp";
+			c.style.width = randomBH(40,250) + "px";
+			c.style.height = "auto"; 
+			c.style.left = Math.random()*screen.availWidth + "px";
+			c.style.top = Math.random()*screen.availHeight + "px";
+			
+			document.body.appendChild(c);
+		}
+		
+
+		function randomBH(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		} 
+
+		
+
+		var text = "일주일의 <br>생각들 <br> 시작 <br> 벌써<br>월요일이네<br> 월요일은<br> 대면수업이 <br>있지<br> OH <br>NO<br> 어색한<br> 대면수업이<br> 끝나면<br> 사진<br>과제를 <br>하러<br> 밖을 <br>돌아다니다가<br> 집에오면 <br> 앗<br>! <br> 내일 <br>피드백 받으려면<br> 작업을 <br>더 진행해 놔야 <br> 하는데<br>!!!!!!! <br> 타이포는 <br>해도해도<br> 어려워 <br> 내일<br>몇시 수업이더라 <br>......?<br> 오전이네<br> 밤새서 <br> 진행해<br>놔야겠어 ㅜㅜ<br>ㅠㅠ <br> 화요일 <br>수업이 <br> 끝나면<br> 웹인터 <br>과제를 해야지<br> 아직 <br> 어려운<br>자바스크립트 <br> 우리<br>언제 <br> 서로 <br> 친해질<br>수 <br>있을까? <br> 아이디어가 <br>떠오르지 않아 <br> 수요일 <br> 아아아<br>아아?! <br> 교양<br>강의 <br>못들을 <br> 뻔 <br>했다 <br> 다행히 <br> 출석은<br>챙겼네 <br>교양 공부는 <br> 시험기간에 <br>몰아서 <br> 목요일에 <br> 오전 <br>수업이 <br> 있고 <br> 저녁때 <br> 팀플<br>회의를 <br>하려면 <br> 지금 <br> 회의 준비를 <br>해야지 <br> 해외사례<br>조사 <br> 번역기를 <br> 열심히<br>돌려보자 <br> 다다다다닥<br> 드디어 <br>마지막<br> 평일 <br>금요일 <br> 오전 <br> 수업만 <br>끝나면 <br> 나는<br>자유 <br> 가 <br>아니라 <br> 드로잉<br>과제 <br> 해야지 <br> 주말에 <br> 공을 <br>들여야 <br> 완성도를 <br> 높일수<br>있어요 <br> 드로잉 <br>과제를 <br> 마치면 <br>밀린 <br> 교양수업을<br>듣자 <br> 와 <br> 다<br>들었다<br>  <br> 다시 <br>또 <br> 벌써 <br>월요일이네 <br> ...... <br> 일주일의<br>생각들 <br> 끝. <br>";
+		var textArr = text.split(" ");
+		var mTimer = setInterval(print,450);
+		var s = 0;
+		s.id = back2
+		s.style.fontsize = randomBT(13,18) + "em";
+		s.style.fontsize = Math.random()*screen.availWidth + "em";
+		
+		function print(){
+			back2.innerHTML = textArr[s];
+			s++
+			if(s == textArr.length){clearInterval(mTimer);
+			}
+		}
+
+		function randomBT(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		} 
+
+	
+				
+		
+
+
+
+	</script>
+
+</body>
+
+</html>
